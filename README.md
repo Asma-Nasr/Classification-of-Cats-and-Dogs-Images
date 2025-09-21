@@ -1,5 +1,4 @@
-# PRODIGY ML 03
-Task 3 @ PRODIGY ML Internship
+# Classification of Cats & Dogs Images
 
 ## Instructions
 - Implement a support vector machine SVM to classify images of cats and dogs from the [Kaggle](https://www.kaggle.com/) dataset.
