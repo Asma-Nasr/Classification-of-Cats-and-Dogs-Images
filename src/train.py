@@ -1,7 +1,7 @@
 
 def train(model, loader, criterion, optimizer, device, epochs):
     model.train()
-     
+       
     for epoch in range(epochs):
         running_loss = 0.0
         correct = 0
