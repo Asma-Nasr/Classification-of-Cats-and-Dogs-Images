@@ -15,3 +15,4 @@ def evaluate(model, loader,criterion, device):
             correct += (preds == labs).sum().item()
             total += imgs.size(0)
     return loss_sum / total, correct / total
+ 
