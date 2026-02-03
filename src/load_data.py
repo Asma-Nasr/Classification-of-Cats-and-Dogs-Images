@@ -1,7 +1,7 @@
 from torchvision import datasets,transforms
 from torch.utils.data import DataLoader 
 
-def load_data():
+def load_data(): 
  
     transform = transforms.Compose([
     transforms.Resize((224,224)),
