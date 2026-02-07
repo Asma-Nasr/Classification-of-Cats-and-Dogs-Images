@@ -1,5 +1,5 @@
 import torch
-
+ 
 def evaluate(model, loader,criterion, device):
     model.eval()
     correct = 0
