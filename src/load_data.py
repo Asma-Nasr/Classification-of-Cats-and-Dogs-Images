@@ -1,3 +1,4 @@
+import torch
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader, random_split
 
@@ -5,18 +6,21 @@ def get_dataloaders(data_dir, batch_size = 16, train_ratio = 0.8, seed = 42):
  
  # create transfroms
  train_transform = transforms.Compose([
-  transforms.Resize([224,224]),
+  transforms.Resize((224,224)),
   transforms.RandomHorizontalFlip(),
   transforms.ToTensor()
  ])
  test_transform = transforms.Compose([
-  transforms.Resize([224,224]),
+  transforms.Resize((224,224)),
   transforms.ToTensor()
  ]) 
  
  # loading the full dataset
  full_dataset = datasets.ImageFolder(data_dir)
 
+ # reproducible split
+ torch.manual_seed(seed)
+ 
  # creating the splits
  train_split = int(train_ratio * len(full_dataset))
  test_split = len(full_dataset) - train_split
