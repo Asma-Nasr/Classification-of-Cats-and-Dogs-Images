@@ -1,6 +1,6 @@
 import torch.nn as nn
 from torchvision import models 
-
+ 
 def pretrained_model(num_classes=2, pretrained=True):
     """Return a ResNet18 model with custom output layer.""" 
     model = models.resnet18(pretrained=pretrained)
