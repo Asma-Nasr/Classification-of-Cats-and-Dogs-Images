@@ -3,7 +3,7 @@ from torchvision import datasets, transforms
 from torch.utils.data import DataLoader, random_split
 
 def get_dataloaders(data_dir, batch_size = 16, train_ratio = 0.8, seed = 42):
- 
+  
  # create transfroms
  train_transform = transforms.Compose([
   transforms.Resize((224,224)),
