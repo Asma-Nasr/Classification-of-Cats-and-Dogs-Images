@@ -1,11 +1,12 @@
 import matplotlib.pyplot as plt
 
-def show_imaages(images, labels, n_images):
-    plt.figure(figsize=(10, 10))
-    for i in range(n_images):
-        plt.subplot(1, n_images, i + 1)
-        # Convert from (C, H, W) to (H, W, C)
-        plt.imshow(images[i].permute(1, 2, 0))  
-        plt.title('Cat' if labels[i] == 0 else 'Dog')  
+def show_images(data, num_images=4):
+    data_iter = iter(data)
+    images, labels = next(data_iter)
+    plt.figure(figsize=(8,4))
+    for i in range(num_images):
+        plt.subplot(1,num_images,i+1)
+        plt.imshow(images[i].permute(1,2,0))
+        plt.title('Cat' if labels[i] == 0 else 'Dog')
         plt.axis('off')
     plt.show()
