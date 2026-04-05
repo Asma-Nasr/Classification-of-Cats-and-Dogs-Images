@@ -7,7 +7,7 @@ def pretrained_model(num_classes=2, pretrained=True):
     num_features = model.fc.in_features
     model.fc = nn.Linear(num_features, num_classes)
     return model
-
+ 
 class CNN(nn.Module):
     def __init__(self, num_classes=2):
         super().__init__()
