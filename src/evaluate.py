@@ -7,7 +7,7 @@ def evaluate(model, loader,criterion, device):
     loss_sum = 0.0
     with torch.no_grad():
         for imgs, labs in loader:
-            imgs, labs = imgs.to(device), labs.to(device)
+            imgs, labs = imgs.to(device), labs.to(device) 
             outputs = model(imgs)
             loss = criterion(outputs, labs)
             loss_sum += loss.item() * imgs.size(0)
